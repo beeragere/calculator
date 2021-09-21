@@ -22,7 +22,7 @@ body{
 }
 
 .calculater{
-	background-color: var(--sub-color);
+	background-color: var(--main-color);
 
 	width: 15rem;
 	height: 29rem;
