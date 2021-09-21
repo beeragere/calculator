@@ -1,0 +1,194 @@
+*, ::after, ::before{
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+:root{
+	--main-color: #3C1518;
+	--sub-color: #69140E;
+	--light-color: #D58936;
+	font-size: 20px;
+}
+
+
+body{
+	height: 100vh;
+	background-color: var(--light-color);
+	user-select: none;
+	display: grid;
+	
+	place-items: center;
+}
+
+.calculater{
+	background-color: var(--sub-color);
+
+	width: 15rem;
+	height: 29rem;
+
+	border: none;
+	border-radius: 1rem;
+
+	box-shadow: 0 0 2px 1px black;
+}
+
+.display{
+	overflow: hidden;
+	font-size: x-large;
+	margin: 10px;
+	margin-left: auto;
+	margin-right: auto;
+	line-height: 30px;
+	padding: 2px;
+
+	background-color: rgb(189, 175, 175);
+	height: 5rem;
+	width: 14rem;
+
+	border: none;
+	border-radius: 5px;
+
+	box-shadow: inset 0 0 5px 2px black;
+	word-wrap: break-word;
+}
+
+
+.numbers{
+	margin: 10px;
+	height: 15rem;
+	width: 14rem;
+
+	border: none;
+	border-radius: 5px;
+	background-color: var(--light-color);
+	box-shadow: inset 0 0 4px 1px black;
+	margin-left: auto;
+	margin-right: auto;
+
+	display: grid;
+	justify-items: stretch;
+	align-items: stretch;
+	justify-content: center;
+	align-content: center;
+	grid-template-columns: 4rem 4rem 4rem;	
+	grid-template-rows: 3rem 3rem 3rem 3rem;
+
+	grid-template-areas:
+		"one two three"
+		"four five six"
+		"seven eight nine"
+		"zer zer zer";
+
+	column-gap: 0.4rem;
+	row-gap: 0.4rem;
+}
+
+.num{
+	color: white;
+	background-color: black;
+	box-shadow: 0 0 2px 1px black;
+
+	display: grid;
+	place-items: center;
+
+	border: none;
+	border-radius: 0.5rem;
+}
+
+.one{
+	grid-area: one;
+}
+.two{
+	grid-area: two;
+}
+.three{
+	grid-area: three;
+}
+.four{
+	grid-area: four;
+}
+.five{
+	grid-area: five;
+}
+.six{
+	grid-area: six;
+}
+.seven{
+	grid-area: seven;
+}
+.eight{
+	grid-area: eight;
+}
+.nine{
+	grid-area: nine;
+}
+.zero{
+	grid-area: zer;
+}
+
+.signs{
+	background-color: #D58936;
+	box-shadow: inset 0 0 4px 1px black;
+
+	height: 7rem;
+	width: 14rem;
+
+	margin-left: auto;
+	margin-right: auto;
+
+	border: none;
+	border-radius: 5px;
+
+	display: grid;
+	grid-template-columns: 3rem 3rem 3rem 3rem;
+	grid-template-rows: 3rem 3rem;
+	grid-template-areas: 
+	"plus minus divide multi"
+	"equals equals clear clear";
+	row-gap: 0.2rem;
+	column-gap: 0.2rem;
+	align-content: center;
+	justify-content: center;
+}
+
+.symbol{
+	background-color: black;
+	color: white;
+
+	display: grid;
+	place-items: center;
+
+	border: none;
+	border-radius: 0.5rem;
+
+	transition: transform 100ms ease-in;
+}
+
+.symbol:hover, .num:hover{
+	transform: scale(1.03, 1.03);
+	background-color: rgb(0, 0, 0, 0.9);
+}
+
+.symbol:active, .num:active{
+	color: black;
+	background-color: white;
+}
+.plus{
+	grid-area: plus;
+}
+.minus{
+	grid-area: minus;
+}
+.divide{
+	grid-area: divide;
+}
+.multiply{
+	grid-area: multi;
+}
+.equals{
+	grid-area: equals;
+}
+.clear{
+	grid-area: clear;
+}
