@@ -8,7 +8,7 @@
 	--main-color: #3C1518;
 	--sub-color: #69140E;
 	--light-color: #D58936;
-	font-size: 20px;
+	font-size: 25px;
 }
 
 
@@ -145,7 +145,7 @@ body{
 	grid-template-rows: 3rem 3rem;
 	grid-template-areas: 
 	"plus minus divide multi"
-	"equals equals clear clear";
+	"equals equals clear allClear";
 	row-gap: 0.2rem;
 	column-gap: 0.2rem;
 	align-content: center;
@@ -191,4 +191,8 @@ body{
 }
 .clear{
 	grid-area: clear;
+}
+
+.allClear{
+	grid-area: allClear;
 }
