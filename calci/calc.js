@@ -38,11 +38,17 @@ symbols.forEach((items) => {
 		else if(keyPress == '='){
 			let innerText = display.innerHTML;
 			let textLength = innerText.length;
+			let equation;
 			if((isNaN(innerText[0])) || (isNaN(innerText[textLength-1]))){
 				console.error("not a number");
 			} 
 			else{
 				console.log("innerHtml is ", display.innerHTML);
+
+				equation = findBracketsAndSolve(innerText);
+
+				display.innerHTML = equation;
+				console.log(equation);
 			}
 		}
 
