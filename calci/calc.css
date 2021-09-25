@@ -151,7 +151,7 @@ body{
 	grid-template-rows: 3rem 3rem;
 	grid-template-areas: 
 	"plus minus divide multi"
-	"equals equals clear allClear";
+	"equals doot clear allClear";
 	row-gap: 0.2rem;
 	column-gap: 0.2rem;
 	align-content: center;
@@ -201,4 +201,7 @@ body{
 
 .allClear{
 	grid-area: allClear;
+}
+.dot{
+	grid-area: doot;
 }
