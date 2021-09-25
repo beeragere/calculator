@@ -40,17 +40,24 @@ symbols.forEach((items) => {
 			let innerText = display.innerHTML;
 			let textLength = innerText.length;
 			let equation;
-			// if((isNaN(innerText[0])) || (isNaN(innerText[textLength-1]))){
-			// 	console.error("not a number");
-			// } 
-			// else{
-				console.log("innerHtml is ", display.innerHTML);
+			let countStar;
+			// equation = findBracketsAndSolve(innerText);
 
-				equation = findBracketsAndSolve(innerText);
+			//replace all the 'x' with '*' in innerText before using eval();
+			countStar = 0;
+			for(let i in innerText){
+				if(innerText[i] == 'x'){
+					countStar++;
+				}
+			}
+			for(let j=0; j<countStar; j++){
+				innerText = innerText.replace("x", "*");
+			}
+			////////////////////////////////////////////////
 
-				display.innerHTML = equation;
-				console.log(equation);
-			// }
+			console.log(innerText);
+			equation = eval(innerText);
+			display.innerHTML = equation;
 		}
 
 		else{
