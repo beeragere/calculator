@@ -1,6 +1,7 @@
 var display = document.querySelector(".display");
 var num = document.querySelectorAll(".num");
 var symbols = document.querySelectorAll(".symbol");
+
 num.forEach((item)=>{
 	item.addEventListener('click', (e)=>{
 		let keyPress = e.target.textContent;
@@ -39,17 +40,17 @@ symbols.forEach((items) => {
 			let innerText = display.innerHTML;
 			let textLength = innerText.length;
 			let equation;
-			if((isNaN(innerText[0])) || (isNaN(innerText[textLength-1]))){
-				console.error("not a number");
-			} 
-			else{
+			// if((isNaN(innerText[0])) || (isNaN(innerText[textLength-1]))){
+			// 	console.error("not a number");
+			// } 
+			// else{
 				console.log("innerHtml is ", display.innerHTML);
 
 				equation = findBracketsAndSolve(innerText);
 
 				display.innerHTML = equation;
 				console.log(equation);
-			}
+			// }
 		}
 
 		else{

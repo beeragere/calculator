@@ -4,6 +4,7 @@
 	solveEquation();
 	checkSigns();
 	disintegrate();
+    format(); //implementing stage;
 
 	findBracesAndSolve() is the main function which takes
 	equation in the string form as argument and returns the 
