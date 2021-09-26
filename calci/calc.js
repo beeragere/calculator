@@ -2,6 +2,24 @@ var display = document.querySelector(".display");
 var num = document.querySelectorAll(".num");
 var symbols = document.querySelectorAll(".symbol");
 
+
+//this function takes the equation of type a(b)-c(d)
+//and converts it into a*(b)-c*(d) which is necessary for
+//eval() function;
+function format(equation){
+	for(let i=0; i<equation.length; i++){
+		if(equation[i] == '('){
+			if(!isNaN(equation[i-1]) || equation[i-1] == ')'){
+				equation = equation.substring(0, i) + '*' + equation.substring(i, equation.length);
+				console.log(equation);
+				i = 0;
+			}
+		}
+	}
+
+	return equation;
+}
+
 num.forEach((item)=>{
 	item.addEventListener('click', (e)=>{
 		let keyPress = e.target.textContent;
@@ -38,7 +56,6 @@ symbols.forEach((items) => {
 
 		else if(keyPress == '='){
 			let innerText = display.innerHTML;
-			let textLength = innerText.length;
 			let equation;
 			let countStar;
 			// equation = findBracketsAndSolve(innerText);
@@ -54,7 +71,7 @@ symbols.forEach((items) => {
 				innerText = innerText.replace("x", "*");
 			}
 			////////////////////////////////////////////////
-
+			innerText = format(innerText);
 			console.log(innerText);
 			equation = eval(innerText);
 			display.innerHTML = equation;
