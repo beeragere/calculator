@@ -17,7 +17,6 @@ function format(equation){
 			}
 		}
 	}
-
 	return equation;
 }
 
@@ -96,7 +95,12 @@ symbols.forEach((items) => {
 		}
 
 		else{
-			display.innerHTML += keyPress;
+			if(display.innerHTML.includes("error")){
+				display.innerHTML = keyPress;
+			}
+			else{
+				display.innerHTML += keyPress;
+			}
 		}
 	})
 })
