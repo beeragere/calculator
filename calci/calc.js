@@ -76,6 +76,9 @@ symbols.forEach((items) => {
 			Infinity, and SyntaxError
 			*/
 			try{
+				if(display.innerHTML == "math error"){
+					throw "error";
+				}
 				equation = eval(innerText);
 				if(isNaN(equation) || !isFinite(equation)){
 					throw "error";
