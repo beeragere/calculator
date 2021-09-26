@@ -25,7 +25,7 @@ num.forEach((item)=>{
 	item.addEventListener('click', (e)=>{
 		let keyPress = e.target.textContent;
 
-		if(Number(display.innerHTML) == 0){
+		if(Number(display.innerHTML) == 0 || display.innerHTML == "syntax error"){
 			display.innerHTML = keyPress;
 		}
 
@@ -74,8 +74,13 @@ symbols.forEach((items) => {
 			////////////////////////////////////////////////
 			innerText = format(innerText);
 			console.log(innerText);
-			equation = eval(innerText);
-			display.innerHTML = equation;
+			try{
+				equation = eval(innerText);
+				display.innerHTML = equation;
+			}
+			catch(err){
+				display.innerHTML = "syntax error";
+			}
 		}
 
 		else{
