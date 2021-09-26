@@ -25,7 +25,7 @@ num.forEach((item)=>{
 	item.addEventListener('click', (e)=>{
 		let keyPress = e.target.textContent;
 
-		if(Number(display.innerHTML) == 0 || display.innerHTML == "syntax error"){
+		if(Number(display.innerHTML) == 0 || display.innerHTML.includes("error") ){
 			display.innerHTML = keyPress;
 		}
 
@@ -76,10 +76,20 @@ symbols.forEach((items) => {
 			console.log(innerText);
 			try{
 				equation = eval(innerText);
-				display.innerHTML = equation;
+				console.log(equation);
+				if(isNaN(equation) || !isFinite(equation)){
+					throw "error";
+				}
 			}
 			catch(err){
-				display.innerHTML = "syntax error";
+				console.log(err)
+				if(typeof(err) == "object"){
+					display.innerHTML = "syntax error";
+				}
+
+				else{
+					display.innerHTML = "math error";
+				}
 			}
 		}
 
@@ -88,5 +98,4 @@ symbols.forEach((items) => {
 		}
 	})
 })
-
 
