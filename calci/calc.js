@@ -3,7 +3,7 @@ var num = document.querySelectorAll(".num");
 var symbols = document.querySelectorAll(".symbol");
 
 
-/*this function takes the equation of type a(b)-c(d)
+/*format() function takes the equation of type a(b)-c(d)
 and converts it into a*(b)-c*(d) which is necessary for
 eval() function;
 */
@@ -59,7 +59,6 @@ symbols.forEach((items) => {
 			let innerText = display.innerHTML;
 			let equation;
 			let countStar;
-			// equation = findBracketsAndSolve(innerText);
 
 			//replace all the 'x' with '*' in innerText before using eval();
 			countStar = 0;
@@ -73,13 +72,16 @@ symbols.forEach((items) => {
 			}
 			////////////////////////////////////////////////
 			innerText = format(innerText);
-			console.log(innerText);
+
+			/*exception handling for NaN, 
+			Infinity, and SyntaxError
+			*/
 			try{
 				equation = eval(innerText);
-				console.log(equation);
 				if(isNaN(equation) || !isFinite(equation)){
 					throw "error";
 				}
+				display.innerHTML = equation;
 			}
 			catch(err){
 				console.log(err)
@@ -98,4 +100,3 @@ symbols.forEach((items) => {
 		}
 	})
 })
-
