@@ -23,11 +23,9 @@ function format(equation){
 num.forEach((item)=>{
 	item.addEventListener('click', (e)=>{
 		let keyPress = e.target.textContent;
-
-		if(Number(display.innerHTML) == 0 || display.innerHTML.includes("error") ){
+		if((display.innerHTML.length < 2 && Number(display.innerHTML) == 0) || display.innerHTML.includes("error") ){
 			display.innerHTML = keyPress;
 		}
-
 		else{
 			display.innerHTML += keyPress;
 		}
@@ -83,7 +81,7 @@ symbols.forEach((items) => {
 				if(isNaN(equation) || !isFinite(equation)){
 					throw "error";
 				}
-				display.innerHTML = equation;
+				display.innerHTML = Number(equation).toFixed(4);
 			}
 			catch(err){
 				console.log(err)
@@ -107,3 +105,6 @@ symbols.forEach((items) => {
 		}
 	})
 })
+
+
+console.log(Number("10000.0").toFixed(4))

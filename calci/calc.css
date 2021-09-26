@@ -11,16 +11,16 @@
 }
 
 :root{
-	--main-color: #3C1518;
+	--main-color: #6e6b6c;
 	--sub-color: #69140E;
-	--light-color: #D58936;
+	--light-color: #4b4845;
 	font-size: 25px;
 }
 
 
 body{
 	height: 100vh;
-	background-color: var(--light-color);
+	background-color: black;
 	user-select: none;
 	display: grid;
 	
@@ -31,7 +31,7 @@ body{
 	background-color: var(--main-color);
 
 	width: 15.2rem;
-	height: 29.8rem;
+	height: 30rem;
 
 	border: none;
 	border-radius: 1rem;
@@ -91,6 +91,7 @@ body{
 }
 
 .num{
+	position: relative;
 	color: white;
 	background-color: black;
 	box-shadow: 0 0 2px 1px black;
@@ -165,6 +166,7 @@ body{
 }
 
 .symbol{
+	position: relative;
 	background-color: black;
 	color: white;
 
@@ -174,17 +176,19 @@ body{
 	border: none;
 	border-radius: 0.5rem;
 
-	transition: transform 100ms ease-in;
+	transition: all 100ms ease-in;
 }
 
 .symbol:hover, .num:hover{
-	transform: scale(1.03, 1.03);
 	background-color: rgb(0, 0, 0, 0.9);
+	border: none;
+	box-shadow: 0px 0px 4px 1px white;
 }
+
 
 .symbol:active, .num:active{
 	color: black;
-	background-color: white;
+	background-color: var(--main-color);
 }
 .plus{
 	grid-area: plus;
@@ -210,4 +214,15 @@ body{
 }
 .dot{
 	grid-area: doot;
+}
+
+
+@media (max-width: 700px) {
+	:root{
+		font-size: 20px;
+	}	
+
+	.calculater{
+		height: 30.5rem;
+	}
 }
