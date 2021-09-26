@@ -3,9 +3,10 @@ var num = document.querySelectorAll(".num");
 var symbols = document.querySelectorAll(".symbol");
 
 
-//this function takes the equation of type a(b)-c(d)
-//and converts it into a*(b)-c*(d) which is necessary for
-//eval() function;
+/*this function takes the equation of type a(b)-c(d)
+and converts it into a*(b)-c*(d) which is necessary for
+eval() function;
+*/
 function format(equation){
 	for(let i=0; i<equation.length; i++){
 		if(equation[i] == '('){
