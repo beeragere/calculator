@@ -140,6 +140,3 @@ symbols.forEach((items) => {
 		}
 	})
 })
-
-
-console.log(Number("10000.0").toFixed(4))
